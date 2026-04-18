@@ -23,13 +23,12 @@ class GradientHeader extends StatelessWidget {
           ),
           Column(
             children: [
-              Text("Welcome", style: TextStyle(color: Colors.white)),
               Text(
                 "Hotel_Name",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 18),
+                    fontSize: 24),
               ),
             ],
           ),

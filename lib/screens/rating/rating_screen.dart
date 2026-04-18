@@ -7,7 +7,7 @@ class RatingScreen extends StatefulWidget {
 }
 
 class _RatingScreenState extends State<RatingScreen> {
-  double selected = 3;
+  double rating = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -16,21 +16,27 @@ class _RatingScreenState extends State<RatingScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text("Give Rating"),
+
           Slider(
-            value: selected,
+            value: rating,
             min: 1,
             max: 5,
             divisions: 4,
-            label: selected.toString(),
+            label: rating.toString(),
             onChanged: (value) {
-              setState(() {
-                selected = value;
-              });
+              setState(() => rating = value);
             },
           ),
+
           ElevatedButton(
             onPressed: () {
-              RatingService().addRating(selected);
+              RatingService.addRating(rating);
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Rating Submitted")),
+              );
+
               Navigator.pop(context);
             },
             child: Text("Submit"),

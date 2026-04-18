@@ -11,7 +11,7 @@ class DrawerScreen extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          // 🔥 MODERN GRADIENT HEADER
+
           Container(
             width: double.infinity,
             padding: EdgeInsets.only(top: 50, bottom: 20),
